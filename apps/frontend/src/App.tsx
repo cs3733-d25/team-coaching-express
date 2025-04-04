@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { FeedBackForm } from './components/FeedBackForm.tsx';
+import FeedbackGetter from './components/FeedbackGetter.js';
 
 function App() {
     const router = createBrowserRouter([
@@ -17,7 +18,7 @@ function App() {
             <div className="w-full grid justify-items-center">
                 <div className={'flex flex-col gap-5'}>
                     {<FeedBackForm></FeedBackForm>}
-                    {/*<FeedbackGetter/>*/}
+                    <FeedbackGetter/>
                 </div>
                 <Outlet />
             </div>

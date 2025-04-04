@@ -1,12 +1,9 @@
 import { useState } from 'react';
+import { SubmitFeedbackRequest } from '../database/feedback';
 
 export function FeedBackForm() {
     const [name, setName] = useState('');
     const [feedBack, setFeedBack] = useState('');
-
-    function submit() {
-        console.log(`${name} gave the feedback of ${feedBack}`);
-    }
 
     function clear() {
         setFeedBack('');
@@ -43,7 +40,10 @@ export function FeedBackForm() {
             <div className={'grid grid-cols-2 justify-items-center'}>
                 <button
                     className={'border-2 w-32 px-5 py-2 rounded-3xl border-gray-400 drop-shadow-xl'}
-                    onClick={submit}
+                    onClick={() => SubmitFeedbackRequest({
+                        feedback: feedBack,
+                        name: name
+                    })}
                 >
                     Submit
                 </button>

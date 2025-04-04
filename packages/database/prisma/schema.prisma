@@ -17,3 +17,9 @@ model Score {
   time  DateTime
   score Int
 }
+
+model Feedback {
+  id       Int    @id @default(autoincrement())
+  name     String
+  feedback String
+}
